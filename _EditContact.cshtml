@@ -78,11 +78,11 @@
                                 @{
                                     if (emailAddress.Type == EmailType.Personal)
                                     {
-                                        <span class="badge badge-primary m-l-10"> @emailAddress.Type</span>
+                                                    <span class="badge badge-primary m-l-10"> @emailAddress.Type</span>
                                     }
                                     else
                                     {
-                                        <span class="badge badge-success m-l-10"> @emailAddress.Type</span>
+                                                    <span class="badge badge-success m-l-10"> @emailAddress.Type</span>
                                     }
                                 }
 
@@ -127,11 +127,11 @@
                                 @{
                                     if (Address.Type == AddressType.Primary)
                                     {
-                                        <span class="badge badge-primary m-l-10"> @Address.Type</span>
+                                                    <span class="badge badge-primary m-l-10"> @Address.Type</span>
                                     }
                                     else
                                     {
-                                        <span class="badge badge-success m-l-10"> @Address.Type</span>
+                                                    <span class="badge badge-success m-l-10"> @Address.Type</span>
                                     }
                                 }
 
@@ -203,4 +203,20 @@
             autoclose: true
         });
     });
-    </script>
+
+    $(function () {
+        $("#saveContactButton").click(function () {
+            var emailAddress = $("#newEmailAddress").val();
+            var street1 = $("#newAddressStreet1").val();
+            var street2 = $("#newAddressStreet2").val();
+            var city = $("#newAddressCity").val();
+            var state = $("#newAddressState").val();
+            var zip = $("#newAddressZip").val();
+
+            if (emailAddress !== "" || street1 !== "" || street2 !== "" || city !== "" || state !== "" || zip !== "") {
+                alert("Unadded Email or Address information.");
+                return false;
+             }
+         });
+     });
+</script>

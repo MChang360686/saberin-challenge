@@ -176,6 +176,23 @@ namespace ContactManager.Controllers
 
             return Ok();
         }
+
+        // Experimental disregard for now
+        [HttpPost]
+        public JsonResult AddEmail(string email, string type)
+        {
+            try
+            {
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                controllerLogger.LogError("Add Contact Email Error: " + ex.Message);
+                return Json(new { success = false });
+            }
+        }
+
     }
 
 }
